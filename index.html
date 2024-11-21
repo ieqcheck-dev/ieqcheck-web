@@ -55,7 +55,7 @@
       }
     }
 
-    .notify-btn {
+    .notify-btn, .whatsapp-btn {
       padding: 10px 20px;
       background: white;
       color: #2980b9;
@@ -64,11 +64,24 @@
       cursor: pointer;
       font-size: 1rem;
       transition: all 0.3s ease;
+      margin: 10px;
     }
 
-    .notify-btn:hover {
+    .notify-btn:hover, .whatsapp-btn:hover {
       background: #3498db;
       color: white;
+    }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whatsapp-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
     }
 
     footer {
@@ -84,6 +97,10 @@
   <p>Your Air Quality Mapping Solution is Coming Soon!</p>
   <div class="countdown" id="countdown"></div>
   <button class="notify-btn" onclick="notifyMe()">Notify Me</button>
+  <a href="https://wa.me/447738628015?text=Hello%20Chetas,%20I%20want%20to%20know%20more%20about%20IEQCheck!" class="whatsapp-btn" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+    Connect with Chetas Rana
+  </a>
 
   <footer>© 2024 IEQCheck. All Rights Reserved.</footer>
 
