@@ -1009,9 +1009,9 @@ section,
 }
 
 .about .profile .profile-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 70px;
+  /* height: 70px; */
+  border-radius: 20%;
   object-fit: cover;
 }
 
