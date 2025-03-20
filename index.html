@@ -26,6 +26,10 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Video.js Library -->
+  <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet">
+  <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
 </head>
 
 <body class="index-page">
@@ -229,12 +233,40 @@
 
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
             <div class="image-wrapper">
+              <style>
+                .video-js ,.video-js .vjs-tech {
+                  border-radius: 40px;
+                }
+                #hero-video {
+                  width: 800px;
+                  height: 450px;
+                }
+                @media (max-width: 768px) {
+                    #hero-video {
+                        width: 390px;  /* 80% of viewport width on small screens */
+                        height: 230px; /* 40% of viewport height on small screens */
+                    }
+                }
+              </style>
               <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                <img src="assets/img/about-5.webp" alt="Business Meeting" class="img-fluid main-image rounded-4">
+                <!-- <img src="assets/img/about-5.webp" alt="Business Meeting" class="img-fluid main-image rounded-4"> -->
+                <video id="hero-video" class="video-js vjs-default-skin" autoplay loop muted playsinline >
+                  <source src="assets/img/HeroSection.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <script>
+                  var player = videojs('hero-video', {
+                      controls: false, // Hides controls
+                      autoplay: true,
+                      loop: true,
+                      muted: true,
+                      preload: 'auto'
+                  });
+                </script>
                 <img src="assets/img/about-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4">
               </div>
               <div class="experience-badge floating">
-                <h3>15+ <span>Years</span></h3>
+                <h3>40+ <span>Years</span></h3>
                 <p>Of experience in Air Quality service</p>
               </div>
             </div>
@@ -631,18 +663,13 @@
     <!-- /Clients Section -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
+    <!-- <section id="testimonials" class="testimonials section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
+      </div>
       <div class="container">
-
         <div class="row g-5">
-
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="testimonial-item">
               <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -657,8 +684,7 @@
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
-          </div><!-- End testimonial item -->
-
+          </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="testimonial-item">
               <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -673,8 +699,7 @@
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
-          </div><!-- End testimonial item -->
-
+          </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="testimonial-item">
               <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -689,8 +714,7 @@
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
-          </div><!-- End testimonial item -->
-
+          </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="testimonial-item">
               <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
@@ -705,58 +729,45 @@
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
             </div>
-          </div><!-- End testimonial item -->
-
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Testimonials Section -->
+    </section> -->
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
+    <!-- <section id="stats" class="stats section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
               <p>Clients</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projects</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hours Of Support</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
               <p>Workers</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Stats Section -->
+    </section> -->
 
     <!-- Case Studys Section -->
     <section id="CaseStudys" class="services section light-background">
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Case Studys</h2>
@@ -856,8 +867,9 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Pricing Plans</h2>
+        <h5>Affordable Indoor Air Quality Solutions for Healthier Spaces</h5>
+        <p>We offer expert air quality assessment and monitoring services tailored to homes, businesses, and large facilities. Whether you need a basic consultation or continuous monitoring, our flexible plans ensure clean, safe, and compliant indoor environments.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -867,29 +879,38 @@
           <!-- Basic Plan -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="pricing-card">
-              <h3>Basic Plan</h3>
+              <h3>Essential Air Check</h3>
               <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">9.9</span>
+                <span class="currency">£</span>
+                <span class="amount">49</span>
                 <span class="period">/ month</span>
               </div>
-              <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.</p>
+              <p class="description">Get expert advice without a site visit—perfect for homes and small offices.</p>
 
-              <h4>Featured Included:</h4>
+              <h4>For Basic Indoor Air Quality Insights :</h4>
               <ul class="features-list">
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Duis aute irure dolor
+                  Virtual expert consultation
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Excepteur sint occaecat
+                  General indoor air quality assessment
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Nemo enim ipsam voluptatem
+                  Advice on ventilation & pollutant reduction
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  Report with recommendations
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  Email & Call support
                 </li>
               </ul>
+              <p>Best for: Homeowners, small offices, or initial assessments</p>
 
               <a href="#" class="btn btn-primary">
                 Buy Now
@@ -902,33 +923,40 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="pricing-card popular">
               <div class="popular-badge">Most Popular</div>
-              <h3>Standard Plan</h3>
+              <h3>Advanced IAQ Monitoring</h3>
               <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">19.9</span>
+                <span class="currency">£</span>
+                <span class="amount">129</span>
                 <span class="period">/ month</span>
               </div>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+              <p class="description">Comprehensive assessment for better air quality & healthier environments.</p>
 
-              <h4>Featured Included:</h4>
+              <h4>In-Depth Air Quality Analysis:</h4>
               <ul class="features-list">
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Lorem ipsum dolor sit amet
+                  On-site air quality inspection
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Consectetur adipiscing elit
+                  Detailed pollutant analysis (PM2.5, CO2, VOCs, humidity, etc.)
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Sed do eiusmod tempor
+                  Monthly monitoring & data reports
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Ut labore et dolore magna
+                  Actionable improvement strategies
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  Priority support
                 </li>
               </ul>
+              <p>
+                Best for: Businesses, schools, and healthcare facilities
+              </p>
 
               <a href="#" class="btn btn-light">
                 Buy Now
@@ -940,38 +968,39 @@
           <!-- Premium Plan -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="pricing-card">
-              <h3>Premium Plan</h3>
+              <h3>Customised Clean Air Solution</h3>
               <div class="price">
                 <span class="currency">$</span>
                 <span class="amount">39.9</span>
                 <span class="period">/ month</span>
               </div>
-              <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
-
-              <h4>Featured Included:</h4>
+              <p class="description">Scalable solutions for workplaces, large buildings & high-risk environments</p>
+              <h4>Tailored Monitoring & Compliance Support:</h4>
               <ul class="features-list">
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Temporibus autem quibusdam
+                  Continuous air quality monitoring
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Saepe eveniet ut et voluptates
+                  IoT-based real-time data tracking
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Nam libero tempore soluta
+                  Bespoke air purification strategies
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Cumque nihil impedit quo
+                  Compliance certification support
                 </li>
                 <li>
                   <i class="bi bi-check-circle-fill"></i>
-                  Maxime placeat facere possimus
+                  24/6 expert assistance & custom recommendations
                 </li>
               </ul>
-
+              <p>
+                Best for: Large offices, hospitals, industrial spaces, and regulatory compliance
+              </p>
               <a href="#" class="btn btn-primary">
                 Buy Now
                 <i class="bi bi-arrow-right"></i>
@@ -993,7 +1022,7 @@
 
           <div class="col-lg-5" data-aos="fade-up">
             <h2 class="faq-title">Have a question? Check out the FAQ</h2>
-            <p class="faq-description">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet adipiscing sem neque sed ipsum.</p>
+            <!-- <p class="faq-description">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet adipiscing sem neque sed ipsum.</p> -->
             <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
               <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="currentColor"></path>
@@ -1082,9 +1111,8 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
       </div><!-- End Section Title -->
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-4 g-lg-5">
