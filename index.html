@@ -63,90 +63,60 @@
   <div class="loader-container" id="loader" style="background-color: #ecf6ff;">
     <img src="assets/img/ieqchecklogo.png" alt="IEQCHECK Logo" class="logo" style="width:25%;  background-color: #fdfdfe; padding:25px; border-radius: 10%;">
     <div class="line" id="text" style="font-size: xx-large; color: #1d3a42;"></div>
-</div>
-<script>
-    const lines = [
-        "IEQCHECK: Accurate Air Quality Testing",
-        "Expert Consultation & Reporting",
-        "Tailored Solutions for Your Needs"
-    ];
+  </div>
+  <script>
+      const lines = [
+          "IEQCHECK: Accurate Air Quality Testing",
+          "Expert Consultation & Reporting",
+          "Tailored Solutions for Your Needs"
+      ];
 
-    let originalBackground;
-    
-    function typeText(line, callback) {
-        const textElement = document.getElementById("text");
-        textElement.innerHTML = "";
-        let i = 0;
-        
-        function typing() {
-            if (i < line.length) {
-                textElement.innerHTML += line.charAt(i);
-                i++;
-                setTimeout(typing, 50);
-            } else {
-                setTimeout(callback, 1000);
-            }
-        }
-        typing();
-    }
+      let originalBackground;
+      
+      function typeText(line, callback) {
+          const textElement = document.getElementById("text");
+          textElement.innerHTML = "";
+          let i = 0;
+          
+          function typing() {
+              if (i < line.length) {
+                  textElement.innerHTML += line.charAt(i);
+                  i++;
+                  setTimeout(typing, 50);
+              } else {
+                  setTimeout(callback, 1000);
+              }
+          }
+          typing();
+      }
 
-    function startTypingSequence() {
-        let index = 0;
-        originalBackground = document.body.style.background;
-        document.body.style.background = "#000";
-        document.getElementById("loader").style.zIndex = "99999";
-        
-        function nextLine() {
-            if (index < lines.length) {
-                typeText(lines[index], () => {
-                    index++;
-                    nextLine();
-                });
-            } else {
-                setTimeout(() => {
-                    document.getElementById('loader').classList.add('fade-out');
-                    document.body.style.background = originalBackground;
-                }, 1000);
-            }
-        }
-        nextLine();
-    }
+      function startTypingSequence() {
+          let index = 0;
+          originalBackground = document.body.style.background;
+          document.body.style.background = "#000";
+          document.getElementById("loader").style.zIndex = "99999";
+          
+          function nextLine() {
+              if (index < lines.length) {
+                  typeText(lines[index], () => {
+                      index++;
+                      nextLine();
+                  });
+              } else {
+                  setTimeout(() => {
+                      document.getElementById('loader').classList.add('fade-out');
+                      document.body.style.background = originalBackground;
+                  }, 1000);
+              }
+          }
+          nextLine();
+      }
 
-    window.onload = startTypingSequence;
-</script>
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/ieqchecklogo.png" alt="IEQCHECK Logo" class="logo" style="line-height: 0;height: 60%;width: 60%;padding: 0px;margin: 0px;margin-bottom: -15px;max-height: 60%;">
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#ieqcheckservice">Services</a></li>
-          <li><a href="#CaseStudys">Case Studies</a></li>
-          <!-- <li><a href="#pricing">Pricing</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>IEQCHECK Offerings</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Professional Service</a></li>
-              <li><a href="#">Environmental Parameters</a></li>
-              <li class="dropdown"><a href="#"><span>Additional Measurable</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Ventilation Air Flow Rates </a></li>
-                  <li><a href="#">Respirable Asbestos</a></li>
-                  <li><a href="#">Airborne Fungi & Bacteria </a></li>
-                  <li><a href="#"> Heavy Metals Concentration</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li> -->
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-      <a class="btn-getstarted" href="https://cal.com/chetas-rana-ieqcheck">Book Expert Call</a>
-    </div>
-  </header>
+      window.onload = startTypingSequence;
+
+  </script>
+  
+  <div id="header-container"></div> <!-- Placeholder for the header -->
 
   <main class="main">
 
@@ -1265,95 +1235,13 @@
 
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">IEQCHECK</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <!-- <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div> -->
-
-        <div class="ol-lg-2 col-md-3 footer-links">
-          <!-- <h4>Service</h4> -->
-          <div>
-            <img src="assets/img/services.webp" alt="Hero Image" class="img-fluid" height="auto">
-          </div>
-        </div>
-        <div class="ol-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">IAQ Monitoring for Certifications </a></li>
-            <li><a href="#">Custom IAQ Plans for BREEAM</a></li>
-            <li><a href="#">IAQ Assessments & Problem Solving</a></li>
-            <li><a href="#">Ventilation Performance Evaluation</a></li>
-            <li><a href="#">On-Site IAQ Sensor Validation</a></li>
-            <li><a href="#">Air Purification Technology Testing</a></li>
-            <li><a href="/environmental-parameters.html ">Monitoring key air pollutants</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <!-- <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div> -->
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">IEQCHECK</strong> <span>All Rights Reserved</span></p>
-      <!-- <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div> -->
-    </div>
-
-  </footer>
+  <div id="footer-container"></div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="assets/js/load-components.js" defer></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
