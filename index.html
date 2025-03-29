@@ -30,17 +30,95 @@
   <!-- Video.js Library -->
   <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet">
   <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; }
+    .loader-container {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        display: flex; flex-direction: column;
+        justify-content: center; align-items: center;
+        text-align: center;
+        color: #fff;
+        z-index: 99999;
+    }
+    .logo { width: 150px; margin-bottom: 20px; opacity: 1; animation: fadeIn 1s ease-in-out; }
+    .line { font-size: 20px; font-weight: bold; white-space: nowrap; overflow: hidden; border-right: 2px solid #fff; }
+    .fade-out { animation: fadeOut 1s forwards; }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; visibility: hidden; }
+    }
+</style>
 </head>
 
 <body class="index-page">
+  <div class="loader-container" id="loader" >
+    <img src="assets/img/ieqchecklogo.png" alt="IEQCHECK Logo" class="logo" style="width:25%;  background-color: #fdfdfe; padding:25px; border-radius: 10%;">
+    <div class="line" id="text" style="font-size: xx-large; color: #fdfdfe;"></div>
+</div>
+<script>
+    const lines = [
+        "IEQCHECK: Accurate Air Quality Testing",
+        "Expert Consultation & Reporting",
+        "Tailored Solutions for Your Needs"
+    ];
 
+    let originalBackground;
+    
+    function typeText(line, callback) {
+        const textElement = document.getElementById("text");
+        textElement.innerHTML = "";
+        let i = 0;
+        
+        function typing() {
+            if (i < line.length) {
+                textElement.innerHTML += line.charAt(i);
+                i++;
+                setTimeout(typing, 50);
+            } else {
+                setTimeout(callback, 1000);
+            }
+        }
+        typing();
+    }
+
+    function startTypingSequence() {
+        let index = 0;
+        originalBackground = document.body.style.background;
+        document.body.style.background = "#000";
+        document.getElementById("loader").style.zIndex = "99999";
+        
+        function nextLine() {
+            if (index < lines.length) {
+                typeText(lines[index], () => {
+                    index++;
+                    nextLine();
+                });
+            } else {
+                setTimeout(() => {
+                    document.getElementById('loader').classList.add('fade-out');
+                    document.body.style.background = originalBackground;
+                }, 1000);
+            }
+        }
+        nextLine();
+    }
+
+    window.onload = startTypingSequence;
+</script>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">IEQCHECK</h1>
+        <img src="assets/img/ieqchecklogo.png" alt="IEQCHECK Logo" class="logo" style="line-height: 0;height: 60%;width: 60%;padding: 0px;margin: 0px;margin-bottom: -15px;max-height: 60%;">
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
@@ -261,7 +339,7 @@
                       preload: 'auto'
                   });
                 </script>
-                <img src="assets/img/about-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4">
+                <img src="assets/img/certificate_illustration.png" alt="Team Discussion" class="img-fluid small-image rounded-4" style="border: 8px solid #0d83fd;">
               </div>
               <div class="experience-badge floating">
                 <h3>40+ <span>Years</span></h3>
@@ -357,11 +435,8 @@
             </li> -->
             <!-- End tab nav item -->
           </ul>
-
         </div>
-
         <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
           <div class="tab-pane fade active show" id="features-tab-1">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
