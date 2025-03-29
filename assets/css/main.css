@@ -2348,3 +2348,55 @@ span{
   width: 50%;
   align-self: start;
 }
+
+
+.white-btn-iaqp {
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: white;
+  color: #0d83fd;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.white-btn-iaqp:hover {
+  background-color: #0d83fd;
+  color: white;
+}
+
+.blue-btn-iaqp {
+  border: 1px solid #0d83fd;
+  border-radius: 20px;
+  background-color: #0d83fd;
+  color: white;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blue-btn-iaqp:hover {
+  background-color: white;
+  color: #0d83fd;
+}
+
+.fotter-li{
+  font-weight: 400;
+}
+
+.fotter-a-links{
+  color: #2d465e;
+}
+
+.fotter-a-links:hover{
+  color: #0d83fd;
+  cursor: pointer;
+}
+
+.case-study-p{
+  font-weight: 400;
+  text-align: justify;
+  
+}
