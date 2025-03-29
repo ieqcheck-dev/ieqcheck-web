@@ -2381,3 +2381,22 @@ span{
   background-color: white;
   color: #0d83fd;
 }
+
+.fotter-li{
+  font-weight: 400;
+}
+
+.fotter-a-links{
+  color: #2d465e;
+}
+
+.fotter-a-links:hover{
+  color: #0d83fd;
+  cursor: pointer;
+}
+
+.case-study-p{
+  font-weight: 400;
+  text-align: justify;
+  
+}
