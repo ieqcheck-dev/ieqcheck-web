@@ -2398,5 +2398,16 @@ span{
 .case-study-p{
   font-weight: 400;
   text-align: justify;
-  
+}
+
+.addtionalHyperlink{
+  color: #333;
+}
+
+.pTagDes{
+  font-weight: 500;
+}
+
+.innerTitleClass{
+  font-size: 18px;
 }
