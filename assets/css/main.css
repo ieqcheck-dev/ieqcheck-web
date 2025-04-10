@@ -2432,3 +2432,70 @@ span{
   font-size: 24px;
   margin-top: 10px;
 }
+
+.OurExpertisetext{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#call-to-action,#ieqcheckservice,#features-cards{
+  padding-top: 0px !important;
+}
+
+#about{
+  padding-bottom: 0px !important;
+}
+
+.servicetitle{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.servicedesc{
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 4%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#indoorairServiceimg{
+  width: 800px !important;
+  height: auto;
+  margin-top: 20px;
+}
+
+#service01Con{
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  align-items: center;
+  align-content: space-evenly;
+}
+
+.servicedesc .bi-check-circle-fill{
+  font-size: 12px !important;
+}
+
+.whyus-innerdesc{
+  content: '•';
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  /* text-align: justify; */
+  /* text-justify: inter-word; */
+  display: inline-block;
+  margin-left: -20px;
+  margin-bottom: 2px;
+}
+
+
+.whyus-heder{
+  font-size:17px !important;
+  margin-left: -10px;
+}
+
+.whyus-icon{
+  font-size: 30px !important;
+  padding-right: 5px;
+}
