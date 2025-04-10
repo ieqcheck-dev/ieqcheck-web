@@ -11,3 +11,10 @@ function loadComponent(url, containerId) {
         })
         .catch(error => console.error(`Error loading ${url}:`, error));
 }
+
+function updateCurrentYear() {
+    const currentYearElement = document.getElementById('current-year');
+    const currentYear = new Date().getFullYear();
+    currentYearElement.textContent = currentYear;
+}
+updateCurrentYear()
