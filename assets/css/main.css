@@ -2499,3 +2499,94 @@ span{
   font-size: 30px !important;
   padding-right: 5px;
 }
+
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+
+.wrapper {
+  position: fixed;
+  bottom: 50px;
+  right: -370px;
+  max-width: 345px;
+  width: 100%;
+  background: #0d83fd;
+  border-radius: 8px;
+  padding: 15px 25px 22px;
+  transition: right 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+.wrapper.show {
+  right: 20px;
+}
+.wrapper header {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+header i {
+  color: #ffffff;
+  font-size: 32px;
+}
+header h2 {
+  color: #ffffff;
+  font-weight: 500;
+}
+.wrapper .data {
+  margin-top: 16px;
+}
+.wrapper .data p {
+  color: #ffffff;
+  font-size: 16px;
+}
+.data p a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.data p a:hover {
+  text-decoration: underline;
+}
+.wrapper .buttons {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons .button {
+  border: none;
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 4px;
+  background: #4070f4;
+  cursor: pointer;
+  width: calc(100% / 2 - 10px);
+  transition: all 0.2s ease;
+}
+
+#acceptBtn {
+  background: #fff;
+  color: #034bf1;
+  border: 2px solid #4070f4;
+  border-radius: 15px;
+}
+
+.buttons #acceptBtn:hover {
+  background-color: #fff;
+  color:#034bf1;
+}
+
+#declineBtn {
+  border: 2px solid #4070f4;
+  background-color:#034bf1;
+  color: #ffff;
+  border-radius: 15px;
+}
+
+#declineBtn:hover {
+  background-color: #4070f4;
+  color: #fff;
+}

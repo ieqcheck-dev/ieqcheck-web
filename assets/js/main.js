@@ -176,3 +176,48 @@
 
 })();
 
+
+const cookieBox = document.querySelector(".wrapper");
+const buttons = document.querySelectorAll(".button");
+
+const executeCodes = () => {
+// Check if user already gave consent in localStorage
+const userConsent = localStorage.getItem("cookiesConsent");
+
+  // If consent exists, do NOT show the popup
+  if (userConsent) return;
+
+  // Show popup
+  cookieBox.classList.add("show");
+
+  // Handle button clicks
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      cookieBox.classList.remove("show");
+
+      // Store consent in localStorage based on button ID
+      if (button.id === "acceptBtn") {
+        localStorage.setItem("cookiesConsent", "accept");
+      } else if (button.id === "declineBtn") {
+        localStorage.setItem("cookiesConsent", "decline");
+      }
+    });
+  });
+};
+
+// Run on page load
+window.addEventListener("load", executeCodes);
+
+
+
+function cookiesConsent(consent) {
+  // Store the user's choice in local storage
+  localStorage.setItem("cookiesConsent", consent);
+  // Optional: Hide the popup after the user makes a choice
+  const popup = document.getElementById("cookie-popup");
+  if (popup) {
+    popup.classList.remove("show");
+  }
+  // Optional: Log the consent for debugging
+  console.log("User consent:", consent);
+}
