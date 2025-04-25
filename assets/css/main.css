@@ -2590,3 +2590,13 @@ header h2 {
   background-color: #4070f4;
   color: #fff;
 }
+
+.popup-close-btn{
+  padding: 10px;
+  border-radius: 10px;
+  color: white ;
+  background-color: #0070d7 ;
+  border: 0px;
+  margin-left: 20px;
+
+}
