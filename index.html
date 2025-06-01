@@ -126,77 +126,57 @@
       </div>
   </div>
 
+  <div class="loader-container" id="loader" style="background-color: #ecf6ff; width: 100%;">
+    <img id='loddericonimg' src="assets/img/ieqchecklogo.png" alt="IEQCHECK Logo" class="logo" style="width:25%;  background-color: #fdfdfe; padding:25px; border-radius: 10%;">
+    <div id='loaderTextstart' class="line" id="text" style="color: #1f383f;"></div>
+  </div>
   <script>
-    const lines = [
-        "Breathe Cleaner, Live Healthier",
-        "IEQCHECK: Reliable Air Quality Testing"
-    ];
-    let originalBackground;
-    let skipLoader = false;
-    let typingTimeout;
+      const lines = [
+          "Breathe Cleaner, Live Healthier",
+          "IEQCHECK: Reliable Air Quality Testing"
+      ];
+      let originalBackground;
+      
+      function typeText(line, callback) {
+          const textElement = document.getElementById("loaderTextstart");
+          textElement.innerHTML = "";
+          let i = 0;
+          
+          function typing() {
+              if (i < line.length) {
+                  textElement.innerHTML += line.charAt(i);
+                  i++;
+                  setTimeout(typing, 50);
+              } else {
+                  setTimeout(callback, 1000);
+              }
+          }
+          typing();
+      }
 
-    function typeText(line, callback) {
-        const textElement = document.getElementById("loaderTextstart");
-        textElement.innerHTML = "";
-        let i = 0;
-
-        function typing() {
-            if (skipLoader) return; // Stop typing if skipped
-            if (i < line.length) {
-                textElement.innerHTML += line.charAt(i);
-                i++;
-                typingTimeout = setTimeout(typing, 50);
-            } else {
-                typingTimeout = setTimeout(callback, 1000);
-            }
-        }
-        typing();
-    }
-
-    function startTypingSequence() {
-        let index = 0;
-        originalBackground = document.body.style.background;
-        document.body.style.background = "#000";
-        document.getElementById("loader").style.zIndex = "99999";
-
-        function nextLine() {
-            if (skipLoader) return;
-            if (index < lines.length) {
-                typeText(lines[index], () => {
-                    index++;
-                    nextLine();
-                });
-            } else {
-                setTimeout(() => {
-                    hideLoader();
-                }, 1000);
-            }
-        }
-        nextLine();
-    }
-
-    function hideLoader() {
-        const loader = document.getElementById('loader');
-        loader.classList.add('fade-out');
-        document.body.style.background = originalBackground;
-    }
-
-    function skipLoading() {
-        skipLoader = true;
-        clearTimeout(typingTimeout);
-        hideLoader();
-    }
-
-    window.onload = startTypingSequence;
-
-    // Add event listener for 'S' key
-    window.addEventListener('keydown', (event) => {
-        if (event.key.toLowerCase() === 's') {
-            skipLoading();
-        }
-    });
-</script>
-
+      function startTypingSequence() {
+          let index = 0;
+          originalBackground = document.body.style.background;
+          document.body.style.background = "#000";
+          document.getElementById("loader").style.zIndex = "99999";
+          
+          function nextLine() {
+              if (index < lines.length) {
+                  typeText(lines[index], () => {
+                      index++;
+                      nextLine();
+                  });
+              } else {
+                  setTimeout(() => {
+                      document.getElementById('loader').classList.add('fade-out');
+                      document.body.style.background = originalBackground;
+                  }, 1000);
+              }
+          }
+          nextLine();
+      }
+      window.onload = startTypingSequence;
+  </script> 
   
   <div id="header-container-homepage">
     <header id="header" class="header d-flex align-items-center fixed-top">
