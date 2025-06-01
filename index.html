@@ -127,56 +127,84 @@
   </div>
 
   <div class="loader-container" id="loader" style="background-color: #ecf6ff; width: 100%;">
-    <img id='loddericonimg' src="assets/img/ieqchecklogo.png" alt="IEQCHECK Logo" class="logo" style="width:25%;  background-color: #fdfdfe; padding:25px; border-radius: 10%;">
-    <div id='loaderTextstart' class="line" id="text" style="color: #1f383f;"></div>
-  </div>
-  <script>
-      const lines = [
-          "Breathe Cleaner, Live Healthier",
-          "IEQCHECK: Reliable Air Quality Testing"
-      ];
-      let originalBackground;
-      
-      function typeText(line, callback) {
-          const textElement = document.getElementById("loaderTextstart");
-          textElement.innerHTML = "";
-          let i = 0;
-          
-          function typing() {
-              if (i < line.length) {
-                  textElement.innerHTML += line.charAt(i);
-                  i++;
-                  setTimeout(typing, 50);
-              } else {
-                  setTimeout(callback, 1000);
-              }
-          }
-          typing();
-      }
+    <img id='loddericonimg' src="assets/img/ieqchecklogo.png" alt="IEQCHECK Logo" class="logo" style="width:25%; background-color: #fdfdfe; padding:25px; border-radius: 10%;">
+    <div id='loaderTextstart' class="line" style="color: #1f383f;"></div>
+</div>
 
-      function startTypingSequence() {
-          let index = 0;
-          originalBackground = document.body.style.background;
-          document.body.style.background = "#000";
-          document.getElementById("loader").style.zIndex = "99999";
-          
-          function nextLine() {
-              if (index < lines.length) {
-                  typeText(lines[index], () => {
-                      index++;
-                      nextLine();
-                  });
-              } else {
-                  setTimeout(() => {
-                      document.getElementById('loader').classList.add('fade-out');
-                      document.body.style.background = originalBackground;
-                  }, 1000);
-              }
-          }
-          nextLine();
-      }
-      window.onload = startTypingSequence;
-  </script> 
+<script>
+    const lines = [
+        "Breathe Cleaner, Live Healthier",
+        "IEQCHECK: Reliable Air Quality Testing"
+    ];
+    let originalBackground;
+    let loaderSkipped = false;
+
+    function typeText(line, callback) {
+        if (loaderSkipped) return; // Stop typing if loader was skipped
+
+        const textElement = document.getElementById("loaderTextstart");
+        textElement.innerHTML = "";
+        let i = 0;
+
+        function typing() {
+            if (loaderSkipped) return; // Stop typing if loader was skipped
+            if (i < line.length) {
+                textElement.innerHTML += line.charAt(i);
+                i++;
+                setTimeout(typing, 50);
+            } else {
+                setTimeout(callback, 1000);
+            }
+        }
+        typing();
+    }
+
+    function startTypingSequence() {
+        let index = 0;
+        originalBackground = document.body.style.background;
+        document.body.style.background = "#000";
+        document.getElementById("loader").style.zIndex = "99999";
+
+        function nextLine() {
+            if (loaderSkipped) return; // Skip sequence
+            if (index < lines.length) {
+                typeText(lines[index], () => {
+                    index++;
+                    nextLine();
+                });
+            } else {
+                hideLoader();
+            }
+        }
+        nextLine();
+    }
+
+    function hideLoader() {
+        const loader = document.getElementById('loader');
+        if (loader) {
+            loader.classList.add('fade-out');
+            document.body.style.background = originalBackground;
+        }
+    }
+
+    // Add keydown listener to skip loader
+    window.addEventListener('keydown', () => {
+        loaderSkipped = true;
+        hideLoader();
+    });
+
+    window.onload = startTypingSequence;
+</script>
+
+<style>
+    /* Optional fade-out animation */
+    .fade-out {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s;
+    }
+</style>
+
   
   <div id="header-container-homepage">
     <header id="header" class="header d-flex align-items-center fixed-top">
